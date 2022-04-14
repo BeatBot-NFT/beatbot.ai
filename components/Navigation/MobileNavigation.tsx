@@ -77,8 +77,8 @@ const MENU_STYLES = {
   bmCrossButton: {
     height: "24px",
     width: "24px",
-    top: 38,
-    right: 38,
+    top: "38px",
+    right: "38px",
   },
   bmCross: {
     color: "#151515",
