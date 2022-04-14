@@ -16,8 +16,9 @@ export const {
       white: "#ffffff",
       gray300: "#EDEDED",
       gray400: "#A1A1A1",
-      gray500: "#444444",
-      gray600: "#2F303A",
+      gray500: "#737373",
+      gray600: "#444444",
+      gray700: "#2F303A",
     },
     fonts: {
       header: `"Rotundo", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,

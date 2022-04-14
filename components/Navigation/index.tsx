@@ -2,12 +2,15 @@ import Link from "next/link";
 import React from "react";
 import { styled } from "../../stitches.config";
 import DesktopNavigation from "./DesktopNavigation";
+import MobileNavigation from "./MobileNavigation";
 
-type Props = {};
-
-const Navigation = (props: Props) => {
+const Navigation = () => {
   return (
     <>
+      <MobileNavigation
+        internalNavigationItems={INTERNAL_NAVIGATION_ITEMS}
+        externalNavigationItems={EXTERNAL_NAVIGATION_ITEMS}
+      />
       <DesktopNavigation
         internalNavigationItems={INTERNAL_NAVIGATION_ITEMS}
         externalNavigationItems={EXTERNAL_NAVIGATION_ITEMS}
@@ -52,11 +55,11 @@ const INTERNAL_NAVIGATION_ITEMS: Array<InternalNavigationItem> = [
 ];
 
 const EXTERNAL_NAVIGATION_ITEMS: Array<ExternalNavigationItem> = [
-  {
-    displayName: "Discord",
-    url: "https://TODO.com",
-    iconPath: "/discord.svg",
-  },
+  //   {
+  //     displayName: "Discord",
+  //     url: "https://TODO.com",
+  //     iconPath: "/discord.svg",
+  //   },
   {
     displayName: "Twitter",
     url: "https://twitter.com/BeatBotNFT",

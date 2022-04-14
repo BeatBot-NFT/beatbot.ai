@@ -57,7 +57,7 @@ const DesktopNavigation = ({
 
 export default DesktopNavigation;
 
-const Header = styled("header", {
+export const Header = styled("header", {
   height: "56px",
   display: "none",
   justifyContent: "space-between",
