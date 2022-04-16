@@ -18,7 +18,7 @@ const TeamGrid = () => {
       <TeamSection>
         <h3>Core Team</h3>
         <PersonGrid>
-          {CO_FOUNDERS.map((person) => (
+          {TEAM.map((person) => (
             <PersonCard person={person} key={person.displayName} />
           ))}
         </PersonGrid>
@@ -133,26 +133,34 @@ const CO_FOUNDERS: Array<Person> = [
 
 const TEAM: Array<Person> = [
   {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
-    socials: [
-      {
-        type: "linkedin",
-        url: "https://linkedin.com",
-      },
-    ],
-    title: "Beep Booper",
-  },
-  {
-    displayName: "Boba",
+    displayName: "kwaji",
     image: "/placeholder.jpg",
     socials: [
       {
         type: "twitter",
-        url: "https://twitter.com",
+        url: "https://twitter.com/jarrensj",
+      },
+      {
+        type: "linkedin",
+        url: "https://www.linkedin.com/in/jarrensanjose/",
       },
     ],
-    title: "Beep Booper",
+    title: "Principal Intern",
+  },
+  {
+    displayName: "JohnPhamous",
+    image: "/placeholder.jpg",
+    socials: [
+      {
+        type: "twitter",
+        url: "https://twitter.com/johnphamous",
+      },
+      {
+        type: "linkedin",
+        url: "https://linkedin.com/in/johnphamous",
+      },
+    ],
+    title: "Senior Intern",
   },
   {
     displayName: "Boba",
