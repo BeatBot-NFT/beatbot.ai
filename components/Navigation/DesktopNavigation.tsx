@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { ExternalNavigationItem, InternalNavigationItem } from ".";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import { styled } from "../../stitches.config";
 
 type Props = {
@@ -15,9 +16,10 @@ const DesktopNavigation = ({
 }: Props) => {
   const router = useRouter();
   const currentRoute = router.pathname;
+  const scrollPosition = useScrollPosition();
 
   return (
-    <Header>
+    <Header type={scrollPosition.y > 100 ? "solid" : undefined}>
       <StartSection>
         <div>
           <Link href="/" passHref>
@@ -76,6 +78,8 @@ export const Header = styled("header", {
   position: "fixed",
   top: 0,
   width: "100%",
+  zIndex: 9999,
+  transition: "background 0.2s",
 
   "@bp2": {
     display: "flex",
@@ -83,6 +87,14 @@ export const Header = styled("header", {
   },
   "@bp3": {
     padding: "16px 122px",
+  },
+
+  variants: {
+    type: {
+      solid: {
+        background: "$gray400",
+      },
+    },
   },
 });
 

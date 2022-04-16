@@ -16,6 +16,7 @@ export const {
       black: "#151515",
       black400: "#2F303A",
       white: "#ffffff",
+      gray200: "#f0f0f0",
       gray300: "#EDEDED",
       gray400: "#A1A1A1",
       gray500: "#737373",

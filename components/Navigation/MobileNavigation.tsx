@@ -3,6 +3,7 @@ import { ExternalNavigationItem, InternalNavigationItem } from ".";
 import { push as Menu } from "react-burger-menu";
 import Link from "next/link";
 import { styled } from "../../stitches.config";
+import useScrollPosition from "../../hooks/useScrollPosition";
 
 type Props = {
   internalNavigationItems: Array<InternalNavigationItem>;
@@ -14,9 +15,10 @@ const MobileNavigation = ({
   internalNavigationItems,
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollPosition = useScrollPosition();
 
   return (
-    <Header>
+    <Header type={scrollPosition.y > 100 ? "solid" : undefined}>
       <Link href="/" passHref>
         <a aria-label="Go back home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -144,9 +146,19 @@ export const Header = styled("header", {
   padding: "16px 60px",
   position: "sticky",
   top: 0,
+  zIndex: 9999,
+  transition: "background 0.2s",
 
   "@bp2": {
     display: "none",
+  },
+
+  variants: {
+    type: {
+      solid: {
+        background: "$gray400",
+      },
+    },
   },
 });
 
