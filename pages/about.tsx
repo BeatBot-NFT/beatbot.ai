@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { styled } from "../stitches.config";
 import styles from "../styles/Home.module.css";
+import ReactCardFlip from "react-card-flip";
+import { useState } from "react";
 
 const Home: NextPage = () => {
   return (
@@ -111,14 +113,33 @@ interface CardProps {
 }
 
 const Card = ({ imagePath, index, title, content }: CardProps) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <StyledCard>
-      <div>
-        <Number>0{index}</Number>
-      </div>
-      <Title>{title}</Title>
-      <div></div>
-    </StyledCard>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <StyledCard
+        onClick={() => {
+          setIsFlipped((prev) => !prev);
+        }}
+      >
+        <div>
+          <Number>0{index}</Number>
+        </div>
+        <Title>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          {title} <img src="/arrow-right.svg" alt="" />
+        </Title>
+
+        <ImageContainer></ImageContainer>
+      </StyledCard>
+      <StyledCard
+        onClick={() => {
+          setIsFlipped((prev) => !prev);
+        }}
+      >
+        {content}
+      </StyledCard>
+    </ReactCardFlip>
   );
 };
 
@@ -127,8 +148,16 @@ const StyledCard = styled("article", {
   padding: 24,
   width: 311,
   height: 311,
+  cursor: "pointer",
+  display: "flex",
+  flexDirection: "column",
+
   p: {
     margin: 0,
+  },
+
+  "p + p": {
+    marginTop: 24,
   },
 
   "@bp2": {
@@ -153,6 +182,18 @@ const Title = styled("p", {
   fontWeight: 700,
   lineHeight: "24px",
   color: "$black",
-  paddingBottom: 64,
-  width: 190,
+  //   paddingBottom: 64,
+  width: 225,
+
+  img: {
+    transform: "translateY(5px)",
+  },
+});
+
+const ImageContainer = styled("div", {
+  height: 116,
+  width: 209,
+  background: "$gray200",
+  marginLeft: "auto",
+  marginTop: "auto",
 });
