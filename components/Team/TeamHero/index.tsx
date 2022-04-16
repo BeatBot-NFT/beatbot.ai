@@ -5,7 +5,7 @@ const TeamHero = () => {
   return (
     <Section>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/globe.svg" alt="" />
+      <img src="/globe.svg" alt="" height="57px" />
       <h1>The Creators</h1>
       <p>
         Our core team of Beatopians is fully commited to changing the landscape

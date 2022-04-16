@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             <img
               src="/logo-full-dark.svg"
               alt=""
-              style={{ width: "100%", padding: "0 16px" }}
+              style={{ width: "100%", padding: "0 16px", height: "54px" }}
             />
           </div>
 
