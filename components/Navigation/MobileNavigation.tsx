@@ -22,7 +22,7 @@ const MobileNavigation = ({
       <Link href="/" passHref>
         <a aria-label="Go back home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" />
+          <img src="/logo.svg" alt="" height="32px" width="51px" />
         </a>
       </Link>
       <Menu
