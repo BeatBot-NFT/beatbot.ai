@@ -37,6 +37,7 @@ const Section = styled("section", {
     fontWeight: 700,
     fontSize: 32,
     color: "$black",
+    textTransform: "uppercase",
 
     "@bp1": {
       fontSize: 64,

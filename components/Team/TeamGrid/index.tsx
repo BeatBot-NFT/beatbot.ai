@@ -44,6 +44,7 @@ const Section = styled("section", {
     textAlign: "center",
     margin: 0,
     marginBottom: 68,
+    textTransform: "uppercase",
   },
 });
 
