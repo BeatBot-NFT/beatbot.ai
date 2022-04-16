@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { ExternalNavigationItem, InternalNavigationItem } from ".";
 import { styled } from "../../stitches.config";
@@ -12,6 +13,9 @@ const DesktopNavigation = ({
   externalNavigationItems,
   internalNavigationItems,
 }: Props) => {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
   return (
     <Header>
       <StartSection>
@@ -26,13 +30,19 @@ const DesktopNavigation = ({
 
         <nav>
           <ul>
-            {internalNavigationItems.map(
-              ({ displayName, path, mobileOnly }) => (
+            {internalNavigationItems
+              .filter(({ mobileOnly }) => !mobileOnly)
+              .map(({ displayName, path }) => (
                 <li key={path}>
-                  <Link href={path}>{displayName}</Link>
+                  <Link href={path} passHref>
+                    <StyledAnchor
+                      type={currentRoute === path ? "active" : undefined}
+                    >
+                      {displayName}
+                    </StyledAnchor>
+                  </Link>
                 </li>
-              )
-            )}
+              ))}
           </ul>
         </nav>
       </StartSection>
@@ -85,12 +95,6 @@ const StartSection = styled("section", {
     display: "flex",
     gap: "56px",
     alignItems: "center",
-    a: {
-      color: "$black",
-      textDecoration: "none",
-      fontSize: "16px",
-      fontWeight: "700",
-    },
 
     "@bp3": {
       marginLeft: 180,
@@ -115,6 +119,31 @@ const EndSection = styled("section", {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+    },
+  },
+});
+
+const StyledAnchor = styled("a", {
+  color: "$black",
+  textDecoration: "none",
+  fontSize: "16px",
+  fontWeight: "700",
+  padding: 4,
+  textTransform: "uppercase",
+  background: "transparent",
+  transition: "color 0.2s, background 0.2s",
+
+  "&:hover": {
+    background: "$gray600",
+    color: "$white",
+  },
+
+  variants: {
+    type: {
+      active: {
+        background: "$black",
+        color: "$white",
+      },
     },
   },
 });
