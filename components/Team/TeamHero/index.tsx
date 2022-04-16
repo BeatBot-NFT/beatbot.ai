@@ -19,4 +19,29 @@ const TeamHero = () => {
 
 export default TeamHero;
 
-const Section = styled("section", {});
+const Section = styled("section", {
+  padding: "120px 0 106px 0",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  h1: {
+    margin: 0,
+    marginBottom: 40,
+    marginTop: 30,
+    fontWeight: 700,
+    fontSize: 64,
+    color: "$black",
+  },
+
+  p: {
+    margin: 0,
+    fontSize: 18,
+    fontWeight: 400,
+    color: "$gray600",
+    fontFamily: "$body",
+    width: 649,
+    textAlign: "center",
+    lineHeight: "21px",
+  },
+});
