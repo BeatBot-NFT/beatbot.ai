@@ -63,6 +63,9 @@ export const Header = styled("header", {
   justifyContent: "space-between",
   alignItems: "center",
   padding: "16px 60px",
+  position: "fixed",
+  top: 0,
+  width: "100%",
 
   "@bp2": {
     display: "flex",

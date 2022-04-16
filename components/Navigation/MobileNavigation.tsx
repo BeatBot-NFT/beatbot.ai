@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { ExternalNavigationItem, InternalNavigationItem } from ".";
 import { push as Menu } from "react-burger-menu";
-import styles from "./MobileNavigation.module.css";
 import Link from "next/link";
 import { styled } from "../../stitches.config";
 
@@ -14,6 +13,8 @@ const MobileNavigation = ({
   externalNavigationItems,
   internalNavigationItems,
 }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Header>
       <Link href="/" passHref>
@@ -28,21 +29,45 @@ const MobileNavigation = ({
         outerContainerId="outer-container"
         right
         width={"100%"}
-        // eslint-disable-next-line @next/next/no-img-element
-        customBurgerIcon={<img src="/hamburger.svg" alt="" />}
+        customBurgerIcon={
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src="/hamburger.svg"
+            alt=""
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          />
+        }
         customCrossIcon={
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src="/close.svg"
             alt=""
             style={{ backgroundColor: "transparent" }}
+            onClick={() => {
+              setIsOpen(false);
+            }}
           />
         }
+        isOpen={isOpen}
+        onOpen={() => {
+          setIsOpen(true);
+        }}
+        onClose={() => {
+          setIsOpen(false);
+        }}
       >
         {internalNavigationItems.map(({ displayName, path }) => {
           return (
             <Link href={path} key={path} passHref>
-              <StyledLink>{displayName}</StyledLink>
+              <StyledLink
+                onClick={(e) => {
+                  setIsOpen(false);
+                }}
+              >
+                {displayName}
+              </StyledLink>
             </Link>
           );
         })}
@@ -68,7 +93,7 @@ const MENU_STYLES = {
     width: "24px",
     height: "24px",
     right: "30px",
-    top: "24px",
+    top: "20px",
   },
   bmBurgerBars: {},
   bmBurgerBarsHover: {
@@ -117,6 +142,8 @@ export const Header = styled("header", {
   justifyContent: "space-between",
   alignItems: "center",
   padding: "16px 60px",
+  position: "sticky",
+  top: 0,
 
   "@bp2": {
     display: "none",
