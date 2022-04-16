@@ -22,8 +22,14 @@ const Home: NextPage = () => {
           </div>
 
           <CardContainer>
-            {CARD_CONTENTS.map(({ title }, index) => (
-              <Card index={index} key={title} title={title} imagePath="" />
+            {CARD_CONTENTS.map(({ title, content }, index) => (
+              <Card
+                index={index}
+                key={title}
+                title={title}
+                imagePath=""
+                content={content}
+              />
             ))}
           </CardContainer>
         </Container>
@@ -37,12 +43,38 @@ export default Home;
 const CARD_CONTENTS = [
   {
     title: "We are a lifestyle brand",
+    content: (
+      <p>
+        Beat Bot is a <b>lifestyle brand</b> focused on music, innovation,
+        collaboration and community engagement.
+      </p>
+    ),
   },
   {
     title: "State of the art machine learning",
+    content: (
+      <>
+        <p>
+          We use state-of-the-art <b>machine learning</b> to synthesize and
+          create new sounds.
+        </p>
+        <p>
+          Our team has years of experience in machine learning and are
+          incorporating their passion for music and innovation into something
+          entirely new to the Web3 space.
+        </p>
+      </>
+    ),
   },
   {
     title: "A new NFT experience",
+    content: (
+      <p>
+        Each Beat Bot Genesis NFT will incorporate a <b>PFP</b> attached with{" "}
+        <b>AI generated musical stems</b>, embodying our brand to create the
+        ultimate experience between music and art.
+      </p>
+    ),
   },
 ];
 
@@ -75,9 +107,10 @@ interface CardProps {
   index: number;
   title: string;
   imagePath: string;
+  content: React.ReactNode;
 }
 
-const Card = ({ imagePath, index, title }: CardProps) => {
+const Card = ({ imagePath, index, title, content }: CardProps) => {
   return (
     <StyledCard>
       <div>
