@@ -54,7 +54,7 @@ const INTERNAL_NAVIGATION_ITEMS: Array<InternalNavigationItem> = [
   //   },
 ];
 
-const EXTERNAL_NAVIGATION_ITEMS: Array<ExternalNavigationItem> = [
+export const EXTERNAL_NAVIGATION_ITEMS: Array<ExternalNavigationItem> = [
   //   {
   //     displayName: "Discord",
   //     url: "https://TODO.com",

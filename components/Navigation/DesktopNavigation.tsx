@@ -51,23 +51,45 @@ const DesktopNavigation = ({
 
       <EndSection>
         <nav>
-          <ul>
-            {externalNavigationItems.map(({ displayName, url, iconPath }) => (
-              <li key={url}>
-                <a href={url} aria-label={displayName}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={iconPath} alt={displayName} />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialIcons navigationItems={externalNavigationItems} />
         </nav>
       </EndSection>
     </Header>
   );
 };
 
+type SocialIconsProps = {
+  navigationItems: Array<ExternalNavigationItem>;
+};
+
+export const SocialIcons = ({ navigationItems }: SocialIconsProps) => {
+  return (
+    <SocialIconsList>
+      {navigationItems.map(({ displayName, url, iconPath }) => (
+        <li key={url}>
+          <a href={url} aria-label={displayName}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={iconPath} alt={displayName} />
+          </a>
+        </li>
+      ))}
+    </SocialIconsList>
+  );
+};
+
 export default DesktopNavigation;
+
+const SocialIconsList = styled("ul", {
+  padding: 0,
+  listStyle: "none",
+  display: "flex",
+  gap: "30px",
+  "li, a": {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
 
 export const Header = styled("header", {
   height: "56px",
@@ -122,17 +144,6 @@ const StartSection = styled("section", {
 
 const EndSection = styled("section", {
   display: "flex",
-  ul: {
-    padding: 0,
-    listStyle: "none",
-    display: "flex",
-    gap: "30px",
-    "li, a": {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-  },
 });
 
 const StyledAnchor = styled("a", {
