@@ -182,7 +182,6 @@ const Title = styled("p", {
   fontWeight: 700,
   lineHeight: "24px",
   color: "$black",
-  //   paddingBottom: 64,
   width: 225,
 
   img: {
