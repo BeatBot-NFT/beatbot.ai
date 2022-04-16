@@ -48,10 +48,10 @@ const INTERNAL_NAVIGATION_ITEMS: Array<InternalNavigationItem> = [
     displayName: "Team",
     path: "/team",
   },
-  {
-    displayName: "Roadmap",
-    path: "/roadmap",
-  },
+  //   {
+  //     displayName: "Roadmap",
+  //     path: "/roadmap",
+  //   },
 ];
 
 const EXTERNAL_NAVIGATION_ITEMS: Array<ExternalNavigationItem> = [
