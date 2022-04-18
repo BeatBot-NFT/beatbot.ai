@@ -84,6 +84,8 @@ const ImageContainer = styled("div", {
   height: "170px",
   width: "170px",
   position: "relative",
+  borderRadius: 4,
+  overflow: "hidden",
 });
 
 const WordmarkContainer = styled("div", {

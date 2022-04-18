@@ -78,63 +78,59 @@ export interface Person {
 
 const CO_FOUNDERS: Array<Person> = [
   {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
-    socials: [
-      {
-        type: "linkedin",
-        url: "https://linkedin.com",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com",
-      },
-    ],
-    title: "Beep Booper",
-  },
-  {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
-    socials: [
-      {
-        type: "linkedin",
-        url: "https://linkedin.com",
-      },
-    ],
-    title: "Beep Booper",
-  },
-  {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
+    displayName: "Owsteen",
+    image: "/owsteen.png",
     socials: [
       {
         type: "twitter",
-        url: "https://twitter.com",
+        url: "https://twitter.com/astroimpulse",
       },
     ],
-    title: "Beep Booper",
+    title: "Co-Founder",
   },
   {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
+    displayName: "Zack Moore",
+    image: "/zack-moore.jpg",
+    socials: [
+      {
+        type: "twitter",
+        url: "https://twitter.com/bags_alot",
+      },
+      {
+        type: "linkedin",
+        url: "https://linkedin.com/in/zachery-moore",
+      },
+    ],
+    title: "Co-Founder",
+  },
+  {
+    displayName: "Whosivann (Ivan)",
+    image: "/ivan.png",
     socials: [
       {
         type: "linkedin",
-        url: "https://linkedin.com",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com",
+        url: "https://www.linkedin.com/in/jiarongivancui",
       },
     ],
-    title: "Beep Booper",
+    title: "Co-Founder",
+  },
+  {
+    displayName: "Stacced (Michael)",
+    image: "/michael.png",
+    socials: [
+      {
+        type: "twitter",
+        url: "https://twitter.com/staystacced",
+      },
+    ],
+    title: "Co-Founder",
   },
 ];
 
 const TEAM: Array<Person> = [
   {
     displayName: "kwaji",
-    image: "/placeholder.jpg",
+    image: "/kwaji.png",
     socials: [
       {
         type: "twitter",
@@ -145,11 +141,11 @@ const TEAM: Array<Person> = [
         url: "https://www.linkedin.com/in/jarrensanjose/",
       },
     ],
-    title: "Principal Intern",
+    title: "Principal Dev Intern",
   },
   {
     displayName: "JohnPhamous",
-    image: "/placeholder.jpg",
+    image: "/john.png",
     socials: [
       {
         type: "twitter",
@@ -160,51 +156,17 @@ const TEAM: Array<Person> = [
         url: "https://linkedin.com/in/johnphamous",
       },
     ],
-    title: "Senior Intern",
+    title: "Senior Dev Intern",
   },
   {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
+    displayName: "Alice Pan",
+    image: "/alice.png",
     socials: [
       {
         type: "linkedin",
-        url: "https://linkedin.com",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com",
+        url: "https://linkedin.com/in/alicejpan",
       },
     ],
-    title: "Beep Booper",
-  },
-  {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
-    socials: [
-      {
-        type: "linkedin",
-        url: "https://linkedin.com",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com",
-      },
-    ],
-    title: "Beep Booper",
-  },
-  {
-    displayName: "Boba",
-    image: "/placeholder.jpg",
-    socials: [
-      {
-        type: "linkedin",
-        url: "https://linkedin.com",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com",
-      },
-    ],
-    title: "Beep Booper",
+    title: "UX Design",
   },
 ];
