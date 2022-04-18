@@ -17,7 +17,7 @@ const PersonCard = ({ person }: Props) => {
 
         <MainContentContainer>
           <ImageContainer>
-            <Image src={person.image} alt="" layout="fill" />
+            <Image src={person.image} alt="" height="170px" width="170px" />
           </ImageContainer>
 
           <h4>{person.displayName}</h4>
