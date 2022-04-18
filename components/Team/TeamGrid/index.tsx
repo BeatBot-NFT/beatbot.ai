@@ -78,12 +78,12 @@ export interface Person {
 
 const CO_FOUNDERS: Array<Person> = [
   {
-    displayName: "Owsteen",
-    image: "/owsteen.png",
+    displayName: "Stacced (Michael)",
+    image: "/michael.png",
     socials: [
       {
         type: "twitter",
-        url: "https://twitter.com/astroimpulse",
+        url: "https://twitter.com/staystacced",
       },
     ],
     title: "Co-Founder",
@@ -115,12 +115,12 @@ const CO_FOUNDERS: Array<Person> = [
     title: "Co-Founder",
   },
   {
-    displayName: "Stacced (Michael)",
-    image: "/michael.png",
+    displayName: "Owsteen",
+    image: "/owsteen.png",
     socials: [
       {
         type: "twitter",
-        url: "https://twitter.com/staystacced",
+        url: "https://twitter.com/astroimpulse",
       },
     ],
     title: "Co-Founder",
